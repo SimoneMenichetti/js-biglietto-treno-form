@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: chartreuse;
+}
+
+.container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+  }
