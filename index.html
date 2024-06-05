@@ -18,11 +18,36 @@
 
         <div class="container">
             <form action="#">
+                <!-- input km da percorrere -->
+                <span>km da percorrere</span>
                 <input type="text" class="inserimentokm" placeholder="inserisci km">
+
+                <span>Fascia d'età</span> 
+
+                <!-- option scelta età -->
+                <select class="sceltaeta" name="categorie">
+                    <option value="minorenne">Minorenne</option>
+                    <option value="18-65">Età compresa fra 18-65</option>
+                    <option value="over-65">Over 65</option>
+                </select>
 
                 <button class="genera">Genera</button>
             </form>
-                <!-- <h2 id="prezzoutente"></h2> -->
+        </div>
+
+            <!-- sezione il tuo biglietto -->
+           <section>
+                <div class="container">
+                    <div>
+                        <h2>Il tuo biglietto</h2>
+                    </div>
+                    
+                    <div>
+                        <h2 id="prezzoutente"></h2>
+                    </div>
+                </div>
+           </section>
+              
     </main>
     <!-- script JS -->
     <script type="text/javascript" src="./js/mainjavascript.js"></script>
