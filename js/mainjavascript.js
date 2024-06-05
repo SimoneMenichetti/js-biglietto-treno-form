@@ -7,7 +7,9 @@ let totale;
 
 const kmUtente = document.querySelector(".inserimentokm");
 const ageUtente = document.querySelector("sceltaeta")
-const  prezzoKm = 0.21;
+const prezzoKm = 0.21;
+const scontoMinorenni = 0.20;
+const scontoMaggiore = 0.40;
 
 
 // selezione pulsante
@@ -17,18 +19,18 @@ const buttonGenera = document.querySelector(".genera");
 // console log button
 console.log("buttonGenera");
 
-
-
-console.log("il km scelto dall'utente è:",kmUtente);
-
 // gestione interazione utente
 
 buttonGenera.addEventListener ("click",
 
-function () {
-  let inputValue = prezzoKm * kmUtente.value;
+function (event) {
+  event.preventDefault()
+  let risultatoPrezzoKmBase= prezzoKm * kmUtente.value;
   
-  console.log(inputValue);
+  console.log(risultatoPrezzoKmBase);
+
+
+
 }
 );
 
@@ -42,6 +44,9 @@ function () {
 
 // // // Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
 // // // il prezzo del biglietto è definito in base ai km (0.21 € al km)
+
+
+
 // const  prezzoKm = 0.21;
 
 // let risultatoPrezzoKmBase = prezzoKm * kmUtente;
@@ -50,6 +55,16 @@ function () {
 
 
 // // // va applicato uno sconto del 20% per i minorenni
+
+
+
+  // // Calcolare il prezzo con il 20% di sconto
+  // let sconto20 = prezzoBase - (risultatoPrezzoKmBase* 20 / 100);
+
+  // // Calcolare il prezzo con il 40% di sconto
+  // let sconto40 = prezzoBase - (risultatoPrezzoKmBase* 40 / 100);
+    
+  
 // // const scontoMinorenni = 0.20;
 // //  // va applicato uno sconto del 40% per gli over 65.
 // // const scontoMaggiore = 0.40;
@@ -74,6 +89,10 @@ function () {
 //     console.log("Il prezzo finale x sconto non applicato se si è >=18 è:",  risultatoPrezzoKmBase );
 //     totale = risultatoPrezzoKmBase;
 // }
+
+
+
+
 // // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
 // // document.getElementById("prezzoutente").innerHTML ="Totale =  " + totale.toFixed(2) + " euro";
