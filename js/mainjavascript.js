@@ -6,10 +6,10 @@ let totale;
 // selezione input
 
 const kmUtente = document.querySelector(".inserimentokm");
-const ageUtente = document.querySelector("sceltaeta")
+const ageUtente = document.querySelector(".sceltaeta");
 const prezzoKm = 0.21;
-const scontoMinorenni = 0.20;
-const scontoMaggiore = 0.40;
+const scontoMinorenni = document.querySelector(".minorenne");
+const scontoMaggiore = document.querySelector(".over");
 
 
 // selezione pulsante
@@ -29,8 +29,22 @@ function (event) {
   
   console.log(risultatoPrezzoKmBase);
 
+  // sconto minori
+ 
+  let scontoMinorenni= 0.20;
+  console.log(scontoMinorenni);
 
+  let scontoFinaleMinori = risultatoPrezzoKmBase *(1 - scontoMinorenni);
+  console.log(scontoFinaleMinori);
 
+// sconto over
+
+  let scontoMaggiore = 0.40;
+  console.log(scontoMaggiore);
+
+  let scontoFinaleOver = risultatoPrezzoKmBase *(1 - scontoMaggiore);
+
+  console.log(scontoFinaleOver);
 }
 );
 
