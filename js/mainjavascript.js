@@ -1,15 +1,17 @@
 // creata Variabile Globale stampa
 let totale;
+let minorenne=false;
 
 // chiedere all’utente il numero di chilometri che vuole percorrere + scelta categoria età
 
 // selezione input
 
 const kmUtente = document.querySelector(".inserimentokm");
-const ageUtente = document.querySelector(".sceltaeta");
+const select = document.querySelector(".sceltaeta");
 const prezzoKm = 0.21;
 const scontoMinorenni = document.querySelector(".minorenne");
 const scontoMaggiore = document.querySelector(".over");
+
 
 
 // selezione pulsante
@@ -17,97 +19,61 @@ const scontoMaggiore = document.querySelector(".over");
 const buttonGenera = document.querySelector(".genera");
 
 // console log button
-console.log("buttonGenera");
+console.log(buttonGenera);
+console.dir( kmUtente);
+
+// select.addEventListener("input",
+//   function (event) {
+
+//     console.log(event);
+
+//     if(event.target.value=="-18"){
+//       minorenne=true;
+//     }
+
+   
+
+//   }
+// )
 
 // gestione interazione utente
 
 buttonGenera.addEventListener ("click",
 
-function (event) {
-  event.preventDefault()
-  let risultatoPrezzoKmBase= prezzoKm * kmUtente.value;
-  
-  console.log(risultatoPrezzoKmBase);
+  function (event) {
+    event.preventDefault()
+   
 
-  // sconto minori
- 
-  let scontoMinorenni= 0.20;
-  console.log(scontoMinorenni);
-
-  let scontoFinaleMinori = risultatoPrezzoKmBase *(1 - scontoMinorenni);
-  console.log(scontoFinaleMinori);
-
-// sconto over
-
-  let scontoMaggiore = 0.40;
-  console.log(scontoMaggiore);
-
-  let scontoFinaleOver = risultatoPrezzoKmBase *(1 - scontoMaggiore);
-
-  console.log(scontoFinaleOver);
-}
+    let risultatoPrezzoKmBase= prezzoKm * kmUtente.value;
+    // sconto minori
+    if (select.value=="-18"){
+      let scontoMinorenni= 0.20;
+      console.log(scontoMinorenni);
+      let scontoFinaleMinori = risultatoPrezzoKmBase *(1 - scontoMinorenni);
+      console.log(scontoFinaleMinori);
+      document.querySelector(".scontistiche").innerHTML ="Ticket extra summer 20% giovani! ";
+      document.getElementById("prezzoutente").innerHTML ="Costo complessivo applicazione sconto 20% iva inclusa =" +  scontoFinaleMinori.toFixed(2) + " euro";
+      
+    // sconto over
+    } else if (select.value=="over-65"){
+      let scontoMaggiore = 0.40;
+      let scontoFinaleOver = risultatoPrezzoKmBase *(1 - scontoMaggiore);
+      console.log(scontoFinaleOver);
+      totale = scontoFinaleOver;
+      document.querySelector(".scontistiche").innerHTML ="Ticket extra summer 40%! Senior  ";
+      document.getElementById("prezzoutente").innerHTML ="Costo complessivo applicazione sconto 40% iva inclusa =  " +  scontoFinaleOver.toFixed(2) + " euro"; 
+      // prezzo base 18-65
+    } else {
+      console.log(risultatoPrezzoKmBase);
+      totale = risultatoPrezzoKmBase;
+      document.querySelector(".scontistiche").innerHTML ="ticket standard ";
+      document.getElementById("prezzoutente").innerHTML ="Costo complessivo iva inclusa = " +  risultatoPrezzoKmBase.toFixed(2) + " euro";
+    }
+    onsubmit="showAlert(); return false;"
+    alert('le scontistiche sono soggette a variazioni si prega di leggere attentamente il regolamento adoperato buon viaggio!');
+  } 
 );
 
 
-// // chiedere l’età del passeggero.
 
-// let ageUtente = parseInt(prompt("inserisci la tua età"));
-
-// console.log("l'età dell'utente è:", ageUtente);
-
-
-// // // Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
-// // // il prezzo del biglietto è definito in base ai km (0.21 € al km)
-
-
-
-// const  prezzoKm = 0.21;
-
-// let risultatoPrezzoKmBase = prezzoKm * kmUtente;
-
-// console.log("il risultato del prezzo viaggio tot è: ", risultatoPrezzoKmBase);
-
-
-// // // va applicato uno sconto del 20% per i minorenni
-
-
-
-  // // Calcolare il prezzo con il 20% di sconto
-  // let sconto20 = prezzoBase - (risultatoPrezzoKmBase* 20 / 100);
-
-  // // Calcolare il prezzo con il 40% di sconto
-  // let sconto40 = prezzoBase - (risultatoPrezzoKmBase* 40 / 100);
-    
-  
-// // const scontoMinorenni = 0.20;
-// //  // va applicato uno sconto del 40% per gli over 65.
-// // const scontoMaggiore = 0.40;
-
-// if (ageUtente < 18) {
-  
-//     let scontoFinaleMinori = risultatoPrezzoKmBase *(1 - scontoMinorenni);
-//     console.log("il prezzo finale con sconto del 20% minorenni è:", scontoFinaleMinori );
-//     totale = scontoFinaleMinori;
-
-    
-// }else if (ageUtente > 65){
-    
-//     let scontoFinaleOver = risultatoPrezzoKmBase *(1 - scontoMaggiore);
-
-//     console.log("il prezzo finale con sconto del 40% Over 65 è:", scontoFinaleOver);
-//     totale = scontoFinaleOver; 
-
-
-//   }else   {
-//     (ageUtente > 17 < 66)
-//     console.log("Il prezzo finale x sconto non applicato se si è >=18 è:",  risultatoPrezzoKmBase );
-//     totale = risultatoPrezzoKmBase;
-// }
-
-
-
-
-// // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
-
-// // document.getElementById("prezzoutente").innerHTML ="Totale =  " + totale.toFixed(2) + " euro";
 

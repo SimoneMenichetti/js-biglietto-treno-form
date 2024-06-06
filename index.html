@@ -8,43 +8,72 @@
 </head>
 <body>
 
+    <header>
+        <div class="container">
+            <img src="./img/Screenshot_6-6-2024_12044_www.italotreno.com.jpeg" alt="">
+        </div>
+
+    </header>
+
     <!-- id message -->
     <main>
-        <div class="container">
+        <section>
+            <!-- sezione calcola la tua vacanza -->
             <div class="title">
-                <h2>Calcola il prezzo del tuo biglietto</h2>
+                <h2>Extra summer sconti fino al 40%! calcola ora la tua vacanza!</h2>
             </div>
-        </div>
+            <div class="container">
+                <form class="form-container" action="#">
+                    <!-- input km da percorrere -->
+                    <div>
+                        <span>km da percorrere</span>
+                    </div>
+                    <input type="text" class="inserimentokm" placeholder="inserisci km">
 
-        <div class="container">
-            <form action="#">
-                <!-- input km da percorrere -->
-                <span>km da percorrere</span>
-                <input type="text" class="inserimentokm" placeholder="inserisci km">
+                    <div>
+                        <span>Fascia d'età</span>
+                    </div> 
 
-                <span>Fascia d'età</span> 
-
-                <!-- option scelta età -->
-                <select class="sceltaeta" name="categorie">
-                    <option class="minorenne" value="-18">Minorenne</option>
-                    <option class="base" value="18-65">Età compresa fra 18-65</option>
-                    <option class="over" value="over-65">Over 65</option>
-                </select>
-
-                <button class="genera">Genera</button>
-            </form>
-        </div>
+                    <!-- option scelta età -->
+                    <select class="sceltaeta" name="categorie">
+                        <option class="minorenne" value="-18">Minorenne</option>
+                        <option class="base" value="18-65">Età compresa fra 18-65</option>
+                        <option class="over" value="over-65">Over 65</option>
+                    </select>
+                    
+                    <button class="genera">Genera</button>
+                    <button class="none">Annulla</button>
+                    
+                </form>
+            </div>
+        </section>
 
             <!-- sezione il tuo biglietto -->
            <section>
+                <div class="title">
+                    <h2>Il tuo ticket ad un click!</h2>
+                </div>
                 <div class="container">
-                    <div>
-                        <h2>Il tuo biglietto</h2>
+                   
+                    <div class="subtitle">
+                        <h4>Dettaglio passeggeri</h4>
+                    </div>
+                        <table>
+                            <tr>
+                                <th>Offerta</th>
+                                <th>Costo totale biglietto</th>
+                            </tr>
+                            <tr>
+                                <td class="scontistiche"></td>
+                                <td id="prezzoutente"></td>
+                            </tr>
+                           
+                        </table>
                     </div>
                     
-                    <div>
+                    <!-- <div>
                         <h2 id="prezzoutente"></h2>
-                    </div>
+                    </div> -->
                 </div>
            </section>
               

@@ -4,18 +4,77 @@
     padding: 0;
 }
 
-
-.container{
-    display: flex;
-    justify-content: center;
-    background-color: chartreuse;
+body{
+  background-color:#A6160B;
 }
 
-.container > div {
-    background-color: #f1f1f1;
-    margin: 10px;
+header .container{
+  background-color: #2E2E2E;
+}
+
+span{
+ color: #FFFFFF;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #000;
+  padding: 20px;
+  margin-bottom: 50px;
+  background-color:  #2E2E2E;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 50px;
+  
+}
+
+.subtitle{
+  color: #A6160B;
   }
 
-  .prezzoutente{
-    color: black;
-  }
+
+/* regole form */
+
+.form-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form-container input {
+  padding: 5px;
+  font-size: 16px;
+}
+.form-container button {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #2E2E2E;
+}
+
+/* table sezione il tuo ticket */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+
+th, td {
+   
+    text-align: center;
+    font-weight: bold;
+}
+
+td{
+  color: green;
+  padding-top: 10px;
+}
+th {
+    background-color: #f2f2f2;
+    border: #A6160B 2px;
+}
